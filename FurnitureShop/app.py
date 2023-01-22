@@ -21,7 +21,7 @@ app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///'+os.path.join(basedir,'furnit
 app.config['JWT_SECRET_KEY'] = 'super-secret'
 app.config['SECRET_KEY'] = 'thisissecret'
 
-#
+
 # user = 'k'
 # password = 'Kruthik007'
 # host = '127.0.0.1'
@@ -88,7 +88,7 @@ class User_Profile(db.Model):
 class Cart(db.Model):
     __tablename__ = "cart"
     # add final price to it and create an intermediatery table
-    cart_id = Column(Integer,primary_key = True,unique=True) # change this line to cart_id
+    cart_id = Column(Integer,primary_key = True) # change this line to cart_id
     user_email = Column(String, ForeignKey("users.email"))
     address = Column(String)
     pincode = Column(Integer)
@@ -97,14 +97,14 @@ class Cart(db.Model):
     product_id = Column(Integer, ForeignKey("products.product_id"))
     product_name = Column(String)
     order_status = Column(String)
-    order_status_created_at = Column(DateTime, default=datetime.datetime.utcnow())
+    order_status_created_at = Column(DateTime, default=datetime.datetime.now())
     # product = Column(Integer, ForeignKey("products.product_id"))
     quantity = Column(Integer,default=1)
     final_price = Column(Float)
 
 
 class Order_Details(db.Model):
-    __tablename__ = "orders"
+    __tablename__ = "orders.detail"
     user_email = Column(String, ForeignKey("users.email"))
     cart_id = Column(Integer,ForeignKey("cart.cart_id"))
     order_id = Column(Integer, primary_key=True,unique=True)
@@ -453,7 +453,7 @@ def login():
         if hashed_password:
             user = User.query.filter_by(email=email).first()
             access_token = jwt.encode(
-                {'public_id': user.public_id, 'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=30)},
+                {'public_id': user.public_id, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)},
                 app.config['SECRET_KEY'])
 
             #return access_token.decode('UTF-8')
@@ -577,6 +577,24 @@ def cancel_order(current_user):
                                + str(cart.cart_id))
     else:
         return jsonify(message= "Order has already been cancelled")
+
+
+@app.route("/order-history",methods=['GET'])
+@token_required
+def order_history(current_user):
+
+    #cart_id = request.headers['cart_id']
+    cart = Cart.query.filter_by(user_email = current_user.email)
+    output=[]
+    for i in cart:
+        temp = {}
+        temp['product_name'] = i.product_name
+        temp["product_id"] = i.product_id
+        temp["order_status"] = i.order_status
+        temp["final_price"] = i.final_price
+        temp["address"] = i.address + i.state + i.country
+        output.append(temp)
+    return jsonify(output)
 
 if __name__=="__main__":
     app.run()

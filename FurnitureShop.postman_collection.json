@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "2cfdaa10-a0f5-4811-897a-2eb83d13c17c",
+		"name": "FurnitureShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25373511"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_name",
+							"value": "Ketan",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Ketan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/create-user-profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "karthik@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Engineer",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "1234567098",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/create-user-profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"create-user-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/login?email=kruthik19102000@gmail.com&password=Pass@123",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI2ZDg3MGNlOS05MWI1LTQwOTgtODFjMy1mOTNhYjA4ZjdjODAiLCJleHAiOjE2NzQyMzI4MjJ9.Ja15K9qQrsrtppEVYInDMb0OfQgVaiBzAbfZwTxOMYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kruthik@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass@123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "karthik@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/edit-customer-profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiIwNGJmNTNjNS00YjIxLTRkOGEtOTBjZi1iMzIxMDQ2MGM5OTQiLCJleHAiOjE2NzQzNDk2MjF9.bVmDSCj45RKREWZwac3OOetw-Snbbmq1dO4M17OWWBk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "kruthik@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Employee",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "2134567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/edit-customer-profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"edit-customer-profile"
+					],
+					"query": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI2ZDg3MGNlOS05MWI1LTQwOTgtODFjMy1mOTNhYjA4ZjdjODAiLCJleHAiOjE2NzQyMzIxNDd9.f8DsB_utySrN8XRIMcGdGB5SUQjkCv3pMdBUoDp5B1k",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/deactivate-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiIwNGJmNTNjNS00YjIxLTRkOGEtOTBjZi1iMzIxMDQ2MGM5OTQiLCJleHAiOjE2NzQzNDk2MjF9.bVmDSCj45RKREWZwac3OOetw-Snbbmq1dO4M17OWWBk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "karthik@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/deactivate-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"deactivate-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/product-catalog",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiIwNGJmNTNjNS00YjIxLTRkOGEtOTBjZi1iMzIxMDQ2MGM5OTQiLCJleHAiOjE2NzQzNDk2MjF9.bVmDSCj45RKREWZwac3OOetw-Snbbmq1dO4M17OWWBk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/product-catalog",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"product-catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/activate-user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiIwNGJmNTNjNS00YjIxLTRkOGEtOTBjZi1iMzIxMDQ2MGM5OTQiLCJleHAiOjE2NzQzNDk2MjF9.bVmDSCj45RKREWZwac3OOetw-Snbbmq1dO4M17OWWBk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "karthik@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/activate-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"activate-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/place-order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJiMzA4NGM0OS00NTk5LTQ2MGYtOGJhMS0wMWVhN2NkMzViMTQiLCJleHAiOjE2NzQ0MjY1MDB9.0l-1zKgNjJCTnpXoHxf0vExg_znaUnI8QBp12PYKAL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "address",
+							"value": "4th cross",
+							"type": "text"
+						},
+						{
+							"key": "pincode",
+							"value": "567890",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Karnataka",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"type": "text"
+						},
+						{
+							"key": "product_id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "product_name",
+							"value": "Dinning Table",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_status",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/place-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"place-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/cancel-order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJlYmIzOTIzMS0yMTAxLTQwZTMtOGIwYy1kZTk2YTcyMGUxYjgiLCJleHAiOjE2NzQ0NzIwODB9.jthLcMaiqwv20gFCPFGC0JSqsIq9C0BAXIIU0rlkq-A",
+						"type": "text"
+					},
+					{
+						"key": "cart_id",
+						"value": "1",
+						"description": "This sould change according to data verify once",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "order_id",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/cancel-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cancel-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/approve-customer-order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJhNWRjODUyNC03NDJkLTRhMGItYTEwZi00NjJkMzk3NzU1NzAiLCJleHAiOjE2NzQ0Nzc1NjN9.QOryHVWMQP4kYP7sGejceRWyC0NXCmSXZ9o0Cx2LgVI",
+						"type": "text"
+					},
+					{
+						"key": "cart_id",
+						"value": " 5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/approve-customer-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"approve-customer-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/fullfilled-customer-order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJhNWRjODUyNC03NDJkLTRhMGItYTEwZi00NjJkMzk3NzU1NzAiLCJleHAiOjE2NzQ0Nzc1NjN9.QOryHVWMQP4kYP7sGejceRWyC0NXCmSXZ9o0Cx2LgVI",
+						"type": "text"
+					},
+					{
+						"key": "cart_id",
+						"value": "5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/fullfilled-customer-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"fullfilled-customer-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/all-orders-pending",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJhNWRjODUyNC03NDJkLTRhMGItYTEwZi00NjJkMzk3NzU1NzAiLCJleHAiOjE2NzQ0Nzc1NjN9.QOryHVWMQP4kYP7sGejceRWyC0NXCmSXZ9o0Cx2LgVI",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/all-orders-pending",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"all-orders-pending"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/order-history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJhNWRjODUyNC03NDJkLTRhMGItYTEwZi00NjJkMzk3NzU1NzAiLCJleHAiOjE2NzQzODcwMTB9.lG2qaOGaHqVhzACw0faFRG07fZAEJvwxKrYp03x4khE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/order-history",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"order-history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
