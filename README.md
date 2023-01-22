@@ -1,7 +1,7 @@
 # Furniture Shop 
 
 A database and api endpoints in python-flask with sqlite as database.
-There is also code to establish connection for MYSQL server commented outin lines 25-45
+There is also code to establish connection for MYSQL server commented out in lines 25-45
 Furniture shop, has following 6 tables 
 
 * Users 
@@ -10,6 +10,25 @@ Furniture shop, has following 6 tables
 * Cart
 * Order_details
 * Orders_Pending_Approval
+
+It has following routes
+
+
+1. "/register" : This is the first step in the app to register as a user
+2. "/login" : User can use this end point to login. Upon successful login an token is created and used for authentication of all the routes
+3. "/get-product-catalog" : End point for getting all product details
+4. "/place-order" : End point for user to place order
+5. "/cancel-order" : End point for user to cancel order
+
+6. "/create-user-profile"  : End point for user to create a user profile
+7. . "/edit-cutomer-profile" : This end point can be used to edit any information
+8. . "/deactivate-user" : End point for admin to deactivate User. 
+9. "/approve-customer-order" : End point for admin to approve the order
+10. "/fullfilled-customer-order" : End point for admin to mark order as full filled
+
+Additional Routes
+* "/activate-user"  : End point to activate a user Profile
+* "/all-orders-pending" : End point for admin to view all user profiles
 
 ## Users Table
 
