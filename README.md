@@ -15,7 +15,8 @@ It has following routes
 
 
 1. "/register" : This is the first step in the app to register as a user
-2. "/login" : User can use this end point to login. Upon successful login an token is created and used for authentication of all the routes
+2. "/login" : User can use this end point to login. Upon successful login an token is created and used for authentication of all the routes. It is common for 
+both user and admin.
 3. "/get-product-catalog" : End point for getting all product details
 4. "/place-order" : End point for user to place order
 5. "/cancel-order" : End point for user to cancel order
@@ -29,6 +30,7 @@ It has following routes
 Additional Routes
 * "/activate-user"  : End point to activate a user Profile
 * "/all-orders-pending" : End point for admin to view all user profiles
+* "/order_history": End point for user to access order history (or My orders)
 
 ## Users Table
 
